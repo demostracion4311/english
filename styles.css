@@ -9,7 +9,7 @@
 }
 .menu{
     width: 100vw;
-    height: 35vh;
+    height: 500px;
     background-image: linear-gradient(rgb(188, 188, 255),rgb(1, 10, 81));
     color: var(--color-texto);
 }
