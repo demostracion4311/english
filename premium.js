@@ -9,6 +9,18 @@ const verbos = [
   ["Beber","Drink"],
   ["Saltar","Jump"],
   ["Nadar","Swim"],
+  ["Amor","Love"],
+  ["Hacer-Domestico","Make"],
+  ["Estudiar","Estudy"],
+  ["Cepillarse","Brush"],
+  ["Tener","Have"],
+  ["Sentar","Sit"], 
+  ["ir", "go"],
+  ["estudiante", "students"],
+  ["casa", "home"],
+  ["inicio", "index"],
+  ["servicio", "services"],
+  ["funcion","function"],
   ["Hablar","Talk"]
 ];
 const titulo = document.querySelector(".title");
@@ -19,18 +31,27 @@ const contentBotonContinuar = document.querySelector(".contentBoton_continuar");
 const messegeError = document.querySelector(".error");
 const messegeSolutions = document.querySelector(".solutions");
 
+const corazonNumber = document.querySelector(".corazon_number");
 
-let contador = 0;
-let barraProgreso = 0;
+
+let indice = 0;//indice para controlar el indice de los array
+let barraProgreso = 0;// para aumnetar la barra de progreso
+let cantidadVidas = 5; // para determinar la cantidad de vida que le resta
+corazonNumber.textContent=cantidadVidas;
 updateProgress(barraProgreso); // Actualiza la barra de progreso al 50%
 
 
 //sonido en parlante
 let talk;
-const volumen = document.querySelector(".volumen");
-volumen.addEventListener("click",decir);
+const volumenNormal = document.querySelector(".volumen");
+volumenNormal.addEventListener("click",decir);
 function decir(){
   LeerNormalIngles(talk)
+}
+const volumenLento = document.querySelector(".volumenLento");
+volumenLento.addEventListener("click",decirLento);
+function decirLento(){
+  LeerLentoIngles(talk)
 }
 
 verificar.addEventListener("click",verificarPrompt);
@@ -41,20 +62,22 @@ function verificarPrompt (){
 
   let valor = input.value;
   let promptText;
-  if(valor===verbos[contador][1]){
-    contador++;
-    barraProgreso+=10;
+  if(valor.toLowerCase()===verbos[indice][1].toLowerCase()){
+    indice++;
+    barraProgreso+=5;
     updateProgress(barraProgreso); // Actualiza la barra de progreso al 100%
     messegeError.textContent="Eres un genio muchacho";
     messegeSolutions.textContent="";
 
     if(contador===verbos.length){
-      contador=0;
+      indice=0;
     }
   }
   else{
     messegeError.textContent="Esta mal tu respuesta SONSO";
-    messegeSolutions.textContent="Solucion correcta: "+verbos[contador][1];
+    messegeSolutions.textContent="Solucion correcta: "+verbos[indice][1];
+    cantidadVidas-=1;
+    corazonNumber.textContent=cantidadVidas;
   }
 }
 // LO QUE OCURRE AL HACER CLICK EN CONTINUAR PROMPT
@@ -65,13 +88,13 @@ continuePrompt.addEventListener("click",continuarPrompt);
 function continuarPrompt (){
   contentBotonContinuar.classList.toggle("inactive");
   input.value="";
-  titulo.textContent=verbos[contador][0];
-  talk = verbos[contador][1];
+  titulo.textContent=verbos[indice][0];
+  talk = verbos[indice][1];
   LeerNormalIngles(talk)
 }
 
-titulo.textContent=verbos[contador][0];
-talk =verbos[contador][1];
+titulo.textContent=verbos[indice][0];
+talk =verbos[indice][1];
 LeerNormalIngles(talk)
 
 
@@ -88,7 +111,7 @@ function LeerNormal(texto) {
   // Sintetizar el texto
   speechSynthesis.speak(speak);
 }
-// FUNCION DE LECTURA EN INGLES
+// FUNCION DE LECTURA EN INGLES NORMAL
 function LeerNormalIngles(texto) {
   // Crear una nueva instancia de SpeechSynthesisUtterance
   let speak = new SpeechSynthesisUtterance(texto);
@@ -96,6 +119,18 @@ function LeerNormalIngles(texto) {
   // Configurar idioma y velocidad
   speak.lang = "en";
   speak.rate = 1;
+
+  // Sintetizar el texto
+  speechSynthesis.speak(speak);
+}
+// FUNCION DE LECTURA EN INGLES LENTO
+function LeerLentoIngles(texto) {
+  // Crear una nueva instancia de SpeechSynthesisUtterance
+  let speak = new SpeechSynthesisUtterance(texto);
+
+  // Configurar idioma y velocidad
+  speak.lang = "en";
+  speak.rate = -5;
 
   // Sintetizar el texto
   speechSynthesis.speak(speak);

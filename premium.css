@@ -47,7 +47,7 @@ body {
 
 .progress {
   height: 100%;
-  background-color: #1192EE;
+  background-color: rgba(17, 146, 238,.5);
   border-radius: 10px;
   transition: width 0.5s ease;
 }
@@ -59,6 +59,11 @@ body {
 }
 .corazon{
   margin: auto;
+}
+.corazon_number{
+  margin: auto auto auto -15px;
+  font-weight: 600;
+  color: rgb(217, 214, 214);
 }
 
 /* Contenido cuando se hace click en boton salir */
@@ -75,7 +80,7 @@ body {
   flex-direction: column;
 }
 
-.btn_abandonar{
+.btn_abandonar, .btn_continuar{
   cursor: pointer;
   margin: auto;
   background-color: #1192EE;
@@ -87,20 +92,13 @@ body {
   border: none;
 }
 .btn_continuar{
-  cursor: pointer;
-  margin: auto;
   background-color: rgba(17, 146, 238,.1);
-  width: 200px;
-  height: 30px;
-  border-radius: 20px;
-  color: rgb(195, 193, 193);
-  border: none;
 }
 
 
 .main{
   width: 100%;
-  height: 100vh;
+  height: fit-content;
   display: flex;
   flex-direction: column;
 }
@@ -132,10 +130,14 @@ p{
   display: flex;
 }
 /* este es el icono del volumen */
-.volumen{
+.volumen, .volumenLento{
   cursor: pointer;
-  margin: auto;
+  margin: auto 10px auto auto;
   width: 35px;
+}
+.volumenLento{
+  margin: auto auto auto 10px;
+  width: 25px;
 }
 .prompt_text{
   display: flex;
@@ -192,30 +194,23 @@ width: 30px;
 
 .contentBoton_continuar{
   position: fixed;
-  background-color: rgba(17, 146, 238,.15);
+  background-color: #2d2d2d;
   width: 100%;
   height: 150px;
   bottom: 0;
   display: flex;
   flex-direction: column;
 }
-.error{
+.error, .solutions{
   width: 100%;
   height: fit-content;
   font-size: 16px;
   font-weight: 700;
   text-align: center;
-  /* background-color: yellow; */
   padding: 10px 0px 5px 0px;
 }
 .solutions{
-  width: 100%;
-  height: fit-content;
-  text-align: center;
-  text-align: center;
-  /* background-color: yellow; */
-  padding: 10px 0px 5px 0px;
-
+  font-weight: 500;
 }
 .contentBoton_verificar{
   position: fixed;
@@ -237,18 +232,7 @@ width: 30px;
   color: white;
   cursor: pointer;
 }
-.btn_continuar{
-  border: none;
-  border-radius: 50px;
-  background-color: #1192EE;
-  width: 80%;
-  height: 30px;
-  font-size: 16px;
-  font-weight: 600;
-  margin: auto;
-  color: white;
-  cursor: pointer;
-}
+
 
 .inactive{
   display: none;
