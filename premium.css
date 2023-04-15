@@ -15,19 +15,20 @@ body {
   color: white;
 }
 /* Contenedor del menu */
-.menu{
+.menu_header{
   margin-top: 10px;
   width: 100%;
   height: 30px;
   display: flex;
 }
-.salir{
+.salir_icon_content{
   width: 10%;
   height: 100%;
   display: flex;
 }
-.x{
+.icon_salir{
   margin: auto;
+  cursor: pointer;
 }
 .barra{
   width: 15%;
@@ -59,6 +60,44 @@ body {
 .corazon{
   margin: auto;
 }
+
+/* Contenido cuando se hace click en boton salir */
+.salir_content{
+  box-sizing: border-box;
+  background-color: #1a1a1a;
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+  width: 100%;
+  height: 200px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn_abandonar{
+  cursor: pointer;
+  margin: auto;
+  background-color: #1192EE;
+  width: 200px;
+  height: 30px;
+  border-radius: 20px;
+  color: white;
+  font-weight: 500;
+  border: none;
+}
+.btn_continuar{
+  cursor: pointer;
+  margin: auto;
+  background-color: rgba(17, 146, 238,.1);
+  width: 200px;
+  height: 30px;
+  border-radius: 20px;
+  color: rgb(195, 193, 193);
+  border: none;
+}
+
+
 .main{
   width: 100%;
   height: 100vh;
@@ -151,13 +190,12 @@ width: 30px;
 
 
 
-.contentBoton{
+.contentBoton_continuar{
   position: fixed;
-  background-color: transparent;
+  background-color: rgba(17, 146, 238,.15);
   width: 100%;
   height: 150px;
   bottom: 0;
-
   display: flex;
   flex-direction: column;
 }
@@ -179,7 +217,27 @@ width: 30px;
   padding: 10px 0px 5px 0px;
 
 }
-.boton{
+.contentBoton_verificar{
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+.btn_verificar, .btn_continuar_prompt{
+  border: none;
+  border-radius: 20px;
+  background-color: #1192EE;
+  width: 80%;
+  height: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  margin: auto auto 35px auto;
+  color: white;
+  cursor: pointer;
+}
+.btn_continuar{
   border: none;
   border-radius: 50px;
   background-color: #1192EE;
@@ -190,6 +248,10 @@ width: 30px;
   margin: auto;
   color: white;
   cursor: pointer;
+}
+
+.inactive{
+  display: none;
 }
 
 

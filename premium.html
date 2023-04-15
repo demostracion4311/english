@@ -9,9 +9,9 @@
 
   </head>
   <body>
-    <header class="menu">
-      <div class="salir">
-        <img src="./imagenes/x.svg" alt="" class="x">
+    <header class="menu_header">
+      <div class="salir_icon_content">
+        <img src="./imagenes/x.svg" alt="" class="icon_salir" id="salir">
       </div>
       <div class="barra">
         <div class="progress-bar">
@@ -52,14 +52,24 @@
           </div>
         </div>
     </main>
+    <!-- Contido que se muestra cuando hca click en SALIR -->
+    <div class="salir_content inactive">
+      <p>¿Desea abandonar la leccion de ingles?</p>
+      <button class="btn_abandonar">Abandonar</button>
+      <button class="btn_continuar">Continuar</button>
+    </div>
 
+    <!-- ESTE BOTN ES SUELTO PARA VERIFICAR -->
+    <footer class="contentBoton_verificar">
+      <button class="btn_verificar" >Verificar</button>
+    </footer>
 
-    <footer class="contentBoton">
+    <footer class="contentBoton_continuar inactive">
       <p class="error"></p>
-      <p class="solutions">Solucion correcta:</p>
-      <button class="boton" >Verificar</button>
+      <p class="solutions"></p>
+      <button class="btn_continuar_prompt">Continuar</button>
     </footer>
     <script src="reconocimientoVoz.js"></script>
-    <script src="premium.js"></script>
+    <script type="module" src="premium.js"></script>
   </body>
 </html>
