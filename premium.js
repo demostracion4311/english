@@ -1,28 +1,6 @@
-// import { verbos} from "./ContenidoEspañolIngles/verbos"
+import { verbos} from "./ContenidoEspañolIngles/verbos.js"
 
-const verbos = [ 
- 
-  ["Dormir","Sleep"],
-  ["Cocinar","Cook"],
-  ["Leer","Read"],
-  ["Practicar","Practice"],
-  ["Beber","Drink"],
-  ["Saltar","Jump"],
-  ["Nadar","Swim"],
-  ["Amor","Love"],
-  ["Hacer-Domestico","Make"],
-  ["Estudiar","Estudy"],
-  ["Cepillarse","Brush"],
-  ["Tener","Have"],
-  ["Sentar","Sit"], 
-  ["ir", "go"],
-  ["estudiante", "students"],
-  ["casa", "home"],
-  ["inicio", "index"],
-  ["servicio", "services"],
-  ["funcion","function"],
-  ["Hablar","Talk"]
-];
+
 const titulo = document.querySelector(".title");
 const input = document.getElementById("bol");
 
@@ -69,7 +47,7 @@ function verificarPrompt (){
     messegeError.textContent="Eres un genio muchacho";
     messegeSolutions.textContent="";
 
-    if(contador===verbos.length){
+    if(indice===verbos.length){
       indice=0;
     }
   }
