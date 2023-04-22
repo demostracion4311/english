@@ -1,4 +1,4 @@
-export const verbos = [ 
+export const verbosCurs = [ 
     ["Trabajar","Work"],
     ["Mirar","Look"],
     ["Escuchar","Listen"],
@@ -29,3 +29,16 @@ export const verbos = [
     ["Nadar","Swim"],
     ["Hablar","Talk"]
   ];
+export const coloresCurs = [
+  ["Negro","Black"],
+  ["Azul","Blue"],
+  ["Amarillo","Yellow"],
+  ["Blanco","White"]
+]
+export const pronombresCurs=[
+  ["Yo","I"],
+  ["Tu","You"],
+  ["El","He"],
+  ["Ella","She"]
+
+];

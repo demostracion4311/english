@@ -1,38 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Celso-English</title>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
 </head>
 <body>
-    <div class="menu">
-        <h1 class="title">Verbos en Inglés-Español</h1>
-        <img class="logo" src="https://demostracion4311.github.io/english/imagenes/updsteam.png" alt="">
-
-    </div>
-
-    <div class="content">
-        <div class="content_verb">
-            <h2>Español</h2>
-            <div class="spanish" id="spanish">Español</div>
+    <header class="header_container">
+        <div class="logo_container header_desktop">
+            <img src="/imagenes/logo.png" alt="" class="logo">
         </div>
-        <div class="content_verb">
-            <h2>Ingles</h2>
-            <div class="english" id="english">Ingles</div>
+        <nav class="nav_container header_desktop" >
+            <ul class="list_nav">
+                <li><a href="/select.html">Lecciones</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Recursos Gratis</a></li>
+            </ul>
+        </nav>
+        <div class="icon_container header_desktop">
+            <input class="search" type="search" placeholder="¿Que quieres aprender hoy?">
         </div>
-        
-    </div>
-    <div class="button">
-        <div class="button_clik" class="normal" id="normal">Normal</div>
-        <div class="button_clik" class="lento" id="lento">Lento</div>
-    </div>
-
-
-    <div class="miElemento" id="miElemento">
-        siguiente
-    </div>
-    <a href="premium.html">ir a otro sitio web</a>
-    <footer>Desarrollado po Celso</footer>
-	<script src="script.js"></script>
+    </header>
+    <main>
+        <div class="banner_presentation">
+            <div class="banner_text">
+                <h1 class="banner_title">Aprende ingles de forma sencilla</h1>
+                <h2>!Practica hablando!</h2>
+                <p>Comienza a estudiar gratis en Enyurex <br> domina
+                el Ingles como un profesional.</p>
+                <a href="/select.html">
+                    <button>Comienza a estudiar gratis</button>
+                </a>
+            </div>
+            <div class="banner_image">
+                <img class="banner_logo" src="/imagenes/chat_logo.svg" alt="">
+            </div>
+        </div>
+    </main>
+    
 </body>
 </html>

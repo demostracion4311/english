@@ -1,8 +1,5 @@
 *{
   margin: 0;
-
-
-
 }
 :root{
   background-color: #192229;
@@ -140,19 +137,21 @@ p{
   width: 25px;
 }
 .prompt_text{
-  display: flex;
+  display: grid;
+  place-items: center;
+
 
 }
 #bol {
-  margin: auto;
   width: 60%;
-  height: 80%;
+  height: 60%;
   padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   background: rgba(0, 0, 0, 0.2);
   box-shadow: 0px 4px 4px #000000;
   border: none;
+  resize: none;
 }
 
 .prompt_voz{
@@ -164,9 +163,9 @@ p{
 
 .microfono_animation{
   cursor: pointer;
-margin: auto;
-width: 50px;
-height: 50px;
+  margin: auto;
+  width: 50px;
+  height: 50px;
 border-radius: 50%;
 border: 1px solid rgba(17, 146, 238,.2);
 display: flex;
@@ -175,6 +174,7 @@ animation:micro .3s alternate infinite paused ;
 }
 
 .logo{
+cursor: pointer;
 margin: auto;
 width: 30px;
 }
