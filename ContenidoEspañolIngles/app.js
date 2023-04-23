@@ -1,9 +1,10 @@
 import { LeerLentoIngles,LeerNormalIngles} from "./speak.js"
 import { generarNumerosUnicos } from "./numberandom.js";
 
-export function ejecucionCurso(verbos, generarNumero){
+export function ejecucionCurso(verbos, generarNumero,parrafoObjetivo){
     const numeros = generarNumerosUnicos(generarNumero);
-    console.log(numeros)
+    const containerObjetivo = document.getElementById("parrafo_objetivo");
+    containerObjetivo.textContent=parrafoObjetivo;
 
     const titulo = document.querySelector(".title");
     const input = document.getElementById("bol");
@@ -48,7 +49,7 @@ export function ejecucionCurso(verbos, generarNumero){
       //ESTE IF COMPARA CON EL VALOR CONVERTIDO EN MINUSCULA CON MINUSCULA DEL ARRAY VERBO INPORTADO
       if(valor.toLowerCase()===verbos[numeros[indice]][1].toLowerCase()){
         playMusic("./sound/correcto star-mc.m4a")
-        barraProgreso+=5;
+        barraProgreso+=100/verbos.length;
         updateProgress(barraProgreso); // Actualiza la barra de progreso al 100%
         messegeError.textContent="Eres un genio muchacho";
         messegeSolutions.textContent="";

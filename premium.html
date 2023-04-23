@@ -27,7 +27,7 @@
 
     <main class="main">
         <div class="main_block objetivo">
-          <p>Escribe el siguiente verbo en ingles:</p>
+          <p id="parrafo_objetivo"></p>
         </div>
 
         <div class="main_block tarea">
@@ -35,8 +35,6 @@
         </div>
 
         <div class="main_block altavoz">
-          <img src="./imagenes/volumen.svg" alt="" class="volumen">
-          <img src="./imagenes/volumen.svg" alt="" class="volumenLento">
         </div>
 
         <div class="main_block prompt_text">
@@ -49,9 +47,12 @@
         </div>
 
           <div class="main_block microfonito">
+            <img src="./imagenes/volumen.svg" alt="" class="volumen">
             <div class="microfono_animation" id="start-btn">
               <img src="./imagenes/microfono.svg" alt="" class="logo">
           </div>
+          <img src="./imagenes/volumen.svg" alt="" class="volumenLento">
+
         </div>
     </main>
     <!-- Contido que se muestra cuando hca click en SALIR -->
@@ -69,7 +70,7 @@
     <footer class="contentBoton_continuar inactive">
       <p class="error"></p>
       <p class="solutions"></p>
-      <button class="btn_continuar_prompt">Continuar</button>
+      <button class="btn_continuar_prompt" >Continuar</button>
     </footer>
     <script src="./reconocimientoVoz.js"></script>
     <script type="module" src="./ContenidoEspañolIngles/app.js"></script>
