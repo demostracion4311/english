@@ -47,6 +47,7 @@ export function ejecucionCurso(verbos, generarNumero){
   
       //ESTE IF COMPARA CON EL VALOR CONVERTIDO EN MINUSCULA CON MINUSCULA DEL ARRAY VERBO INPORTADO
       if(valor.toLowerCase()===verbos[numeros[indice]][1].toLowerCase()){
+        playMusic("./sound/correcto star-mc.m4a")
         barraProgreso+=5;
         updateProgress(barraProgreso); // Actualiza la barra de progreso al 100%
         messegeError.textContent="Eres un genio muchacho";
@@ -60,6 +61,7 @@ export function ejecucionCurso(verbos, generarNumero){
   
       }
       else{
+        playMusic("./sound/incorrecto-mc.m4a")
         messegeError.textContent="Esta mal tu respuesta SONSO";
         messegeSolutions.textContent="Solucion correcta: "+verbos[numeros[indice]][1];
         cantidadVidas-=1;
@@ -112,4 +114,9 @@ export function ejecucionCurso(verbos, generarNumero){
     function volverPage(){
       window.history.back();
     }
+    function playMusic(musicURL) {
+      var audio = new Audio(musicURL);
+      audio.play();
+    }
+    
 }
