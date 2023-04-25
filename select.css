@@ -1,6 +1,6 @@
 
 .main_container{
-    margin: 20px;
+    margin: 15px;
     display: flex;
     flex-wrap: wrap;
 
@@ -9,14 +9,18 @@
 .container_curso{
     border: 2px solid rgb(92, 58, 228);
     border-radius: 5px;
-    width: 200px;
-    height: 300px;
+    width: 280px;
+    height: 180px;
     background-color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    margin: auto;
     
 
+}
+.container_curso:hover{
+    transition: .5s;
+    transform: scale(1.1);
 }
 .banner_curso{
     border-radius: 5px;
@@ -26,7 +30,7 @@
 }
 .banner_verbos{
     margin: auto;
-    width: 50%;
+    width: 25%;
     border-radius: 3px;
 }
 .title_curso_container{
@@ -34,20 +38,16 @@
 }
 .title{
     font-size: 16px;
-    color: rgb(203, 183, 183);
+    color: #FCD683;
     padding: 0px 10px;
+    text-align: center;
+    font-size: 20px;
 }
-.description_curso{
-    height: 70px;
-}
-.description{
-    padding: 10px;
-    font-size: 14px;
-    color: rgb(161, 157, 157);
-}
+
 .enlace{
     display: flex;
     flex-grow: 1;
+    /* display: none; */
 }
 .enlace>a{
     background-color: rgb(46, 20, 175);

@@ -41,7 +41,7 @@ export function ejecucionCurso(verbos, generarNumero,parrafoObjetivo){
   
     // LO QUE OCURRE AL HACER CLICK EN VERIFICAR PROMPT
     function verificarPrompt (){
-
+      input.disabled= true
       contentBotonContinuar.classList.toggle("inactive");
   
       let valor = input.value; //obtiene el valor que recogio del promt text del usuario
@@ -51,7 +51,7 @@ export function ejecucionCurso(verbos, generarNumero,parrafoObjetivo){
         playMusic("./sound/correcto star-mc.m4a")
         barraProgreso+=100/verbos.length;
         updateProgress(barraProgreso); // Actualiza la barra de progreso al 100%
-        messegeError.textContent="Eres un genio muchacho";
+        messegeError.textContent="¡ Eres Brillante !";
         messegeSolutions.textContent="";
 
         indice++;
@@ -63,7 +63,7 @@ export function ejecucionCurso(verbos, generarNumero,parrafoObjetivo){
       }
       else{
         playMusic("./sound/incorrecto-mc.m4a")
-        messegeError.textContent="Esta mal tu respuesta SONSO";
+        messegeError.textContent="¡ Esta mal tu respuesta !";
         messegeSolutions.textContent="Solucion correcta: "+verbos[numeros[indice]][1];
         cantidadVidas-=1;
         corazonNumber.textContent=cantidadVidas;
@@ -76,6 +76,7 @@ export function ejecucionCurso(verbos, generarNumero,parrafoObjetivo){
   
     function continuarPrompt (){
 
+      input.disabled=false;
       contentBotonContinuar.classList.toggle("inactive");
       input.value="";
       console.log(numeros[indice])

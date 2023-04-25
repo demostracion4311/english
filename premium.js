@@ -1,4 +1,4 @@
-import { verbosCurs, coloresCurs , pronombresCurs} from "./ContenidoEspañolIngles/verbos.js"
+import { verbosCurs, coloresCurs , pronombresCurs,numerosCurs} from "./ContenidoEspañolIngles/verbos.js"
 import { ejecucionCurso } from "./ContenidoEspañolIngles/app.js";
 
 
@@ -11,6 +11,8 @@ switch (selectCurso){
   case "colores":ejecucionCurso(coloresCurs,coloresCurs.length,"Escribe el siguiente color en ingles:");
   break;
   case "pronombres":ejecucionCurso(pronombresCurs,pronombresCurs.length,"Escribe el siguiente pronombre en ingles:");
+  break;
+  case "numeros":ejecucionCurso(numerosCurs,numerosCurs.length,"Escribe el siguiente numero en ingles:");
   break;
   default:console.log("algo salio mal")
   break;
