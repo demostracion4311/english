@@ -1,16 +1,25 @@
 *{
   margin: 0;
+  user-select: none;
 }
 :root{
   background-color: #192229;
+  background-color: #0f0f0f;
   box-sizing: border-box;
   font-family: sans-serif;
   --color-parrafo:#CDDDE9;
+  --color-text-primary:#CDDDE9;
+  --color-text-blue:#3ea6ff;
+
+  --color-title:#3ea6ff;
+  --color-background-primary:#0f0f0f;
+  --color-background-secondary:#212121;
+
 
 
 }
 body { 
-  color: white;
+  color: var(--color-parrafo);
   display: flex;
   flex-direction: column;
 }
@@ -42,7 +51,7 @@ body {
   margin: auto;
   width: 100%;
   height: 10px;
-  background-color: #273B49;
+  background-color: var(--color-background-secondary);
   border-radius: 10px;
 }
 
@@ -64,13 +73,13 @@ body {
 .corazon_number{
   margin: auto auto auto -15px;
   font-weight: 600;
-  color: rgb(217, 214, 214);
+  color: var(--color-text-primary);
 }
 
 /* Contenido cuando se hace click en boton salir */
 .salir_content{
   box-sizing: border-box;
-  background: #0C1219;
+  background: var(--color-background-secondary);
   position: fixed;
   bottom: 0;
   z-index: 100;
@@ -114,7 +123,7 @@ body {
   width: 100%;
   height: 50px;
   display: flex;
-  color: #CDDDE9;
+  color: var(--color-parrafo);
 }
 p{
   margin: auto;
@@ -128,12 +137,14 @@ p{
 .title{
   margin: auto;
   font-size: 20px;
-  color: #ffffff;
+  color: var(--color-text-blue);
+  cursor: pointer;
+
 }
 /* ESTE ESPACIO NO CONTIENE NADA ES DONDE ANTERIORMENTE ESTABA LOS ALTAVOCES */
-.altavoz{
+.help_traduction{
+  text-align: center;
   height: 60px;
-  display: flex;
   /* background-color: yellow; */
 }
 /* este es el icono del volumen */
@@ -157,18 +168,25 @@ p{
 }
 #bol {
   width: 60%;
-  height: 50%;
-  padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
-  color: var(--color-parrafo);
-  background: rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 4px 4px #000000;
+  color: var(--color-title);
+  background: transparent;
   border: none;
   resize: none;
-  border-radius: 5px;
+  font-size: 16.5px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-bottom: 1px var(--color-title) solid;
+}
+#bol::placeholder{
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: normal;
 }
 #bol:focus{
-outline: var(--color-parrafo) solid .01px;
+/* outline: var(--color-parrafo) dotted .01px; */
+outline: none;
+
 
 }
 
@@ -198,13 +216,13 @@ width: 45px;
 }
 @keyframes micro{
 0%{
-  box-shadow: 0px 0px 0px 1px rgba(17, 146, 238,.2);
+  box-shadow: 0px 0px 0px 1px var(--color-background-secondary);
 }
 50%{
-  box-shadow: 0px 0px 0px 5px rgba(17, 146, 238,.2);
+  box-shadow: 0px 0px 0px 5px var(--color-background-secondary);
 }
 100%{
-  box-shadow: 0px 0px 0px 10px rgba(17, 146, 238,.2);
+  box-shadow: 0px 0px 0px 10px var(--color-background-secondary);
 }
 }
 
@@ -212,12 +230,13 @@ width: 45px;
 
 .contentBoton_continuar{
   position: fixed;
-  background-color: #1b1b1b;
+  background-color: var(--color-background-secondary);
   width: 100%;
   height: 200px;
   bottom: 0;
   display: flex;
   flex-direction: column;
+
 }
 .error, .solutions{
   width: 100%;
@@ -250,6 +269,9 @@ font-family:'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
   border: none;
   border-radius: 20px;
   background-color: #5723d2;
+  background-color: #065fd4;
+  
+
   width: 80%;
   height: 30px;
   font-size: 16px;
@@ -257,12 +279,41 @@ font-family:'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
   margin: auto auto 30px auto;
   color: white;
   cursor: pointer;
+
 }
 
+/* ESTE ESTILO SE APLICA CUANDO EL USUARIO ACBA ELA LECCION */
+.finish_container{
+  width: 100%;
+  height: 85%;
+  position: fixed;
+  top: 0;
+  background-color:var(--color-background-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 90px;
+}
+.anuncio{
+  width: 80%;
+  height: 70%;
+  border: solid 1px white;
+}
+.anuncio > img{
+  width: 100%;
+}
+.logro{
+  margin-top: 10px;
+  width: 80%;
+  height: 20%;
+  border: 1px solid white;
+}
 
 .inactive{
   display: none;
 }
+
 @media screen and (min-width:750px) {
   .menu_header, .main{
     width: 60%;

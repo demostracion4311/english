@@ -7,14 +7,15 @@ export function ejecucionCurso(verbos, generarNumero,parrafoObjetivo){
     containerObjetivo.textContent=parrafoObjetivo;
 
     const titulo = document.querySelector(".title");
+    const helpTraduction = document.querySelector(".help_traduction")
     const input = document.getElementById("bol");
-  
     const verificar = document.querySelector(".btn_verificar");
     const contentBotonContinuar = document.querySelector(".contentBoton_continuar");
     const messegeError = document.querySelector(".error");
     const messegeSolutions = document.querySelector(".solutions");
-  
     const corazonNumber = document.querySelector(".corazon_number");
+    const continuePrompt = document.querySelector(".btn_continuar_prompt");
+    const finishAnuncio = document.querySelector(".finish_container");
   
   
     let indice = 0;//indice para controlar el indice de los array
@@ -42,6 +43,8 @@ export function ejecucionCurso(verbos, generarNumero,parrafoObjetivo){
     // LO QUE OCURRE AL HACER CLICK EN VERIFICAR PROMPT
     function verificarPrompt (){
       input.disabled= true
+      helpTraduction.textContent="";
+
       contentBotonContinuar.classList.toggle("inactive");
   
       let valor = input.value; //obtiene el valor que recogio del promt text del usuario
@@ -56,9 +59,16 @@ export function ejecucionCurso(verbos, generarNumero,parrafoObjetivo){
 
         indice++;
         if(indice===verbos.length){
-          window.history.back();
-        }
+          anuncio();
+          messegeError.textContent="";
+          messegeSolutions.textContent="";
+          continuePrompt.addEventListener("click",salirAnuncio)
+          function salirAnuncio(){
+            window.history.back();
+
+          }
   
+        }
   
       }
       else{
@@ -70,13 +80,13 @@ export function ejecucionCurso(verbos, generarNumero,parrafoObjetivo){
       }
     }
     // LO QUE OCURRE AL HACER CLICK EN CONTINUAR PROMPT
-    const continuePrompt = document.querySelector(".btn_continuar_prompt");
     continuePrompt.addEventListener("click",continuarPrompt);
   
   
     function continuarPrompt (){
 
       input.disabled=false;
+      helpTraduction.textContent="";
       contentBotonContinuar.classList.toggle("inactive");
       input.value="";
       console.log(numeros[indice])
@@ -119,6 +129,15 @@ export function ejecucionCurso(verbos, generarNumero,parrafoObjetivo){
     function playMusic(musicURL) {
       var audio = new Audio(musicURL);
       audio.play();
+    }
+    function anuncio(){
+      finishAnuncio.classList.toggle("inactive")
+    }
+
+    // ESTE EVENTO AYUDA AL USUARIO VER LA TRADUCCION
+    titulo.addEventListener("click",traduction);
+    function traduction (){
+      helpTraduction.textContent=verbos[numeros[indice]][1];
     }
     
 }
