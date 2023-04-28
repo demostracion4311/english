@@ -10,6 +10,7 @@
   --color-parrafo:#CDDDE9;
   --color-text-primary:#CDDDE9;
   --color-text-blue:#3ea6ff;
+  --color-oficial-blue:#1473E6;
 
   --color-title:#3ea6ff;
   --color-background-primary:#0f0f0f;
@@ -93,7 +94,7 @@ body {
 .btn_abandonar, .btn_continuar{
   cursor: pointer;
   margin: auto;
-  background-color: #5723d2;
+  background-color: var(--color-oficial-blue);
   width: 200px;
   height: 30px;
   border-radius: 20px;
@@ -152,14 +153,19 @@ p{
   cursor: pointer;
   width: 35px;
 }
+.volumen:active, .volumenLento:active{
+  transform: scale(1.1);
+
+}
 .volumen{
   margin: auto -60px auto auto;
 
 }
 .volumenLento{
   margin: auto auto auto -60px;
-  width: 25px;
+  width: 35px;
 }
+
 .prompt_text{
   display: grid;
   place-items: center;
@@ -187,7 +193,6 @@ p{
 /* outline: var(--color-parrafo) dotted .01px; */
 outline: none;
 
-
 }
 
 .prompt_voz{
@@ -203,7 +208,7 @@ outline: none;
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  border: 1px solid rgba(17, 146, 238,.2);
+  border: 1px solid var(--color-text-blue);
   display: flex;
   animation:micro .3s alternate infinite paused ;
 
@@ -212,7 +217,7 @@ outline: none;
 .logo{
 cursor: pointer;
 margin: auto;
-width: 45px;
+width: 53px;
 }
 @keyframes micro{
 0%{
@@ -268,8 +273,7 @@ font-family:'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
 .btn_verificar, .btn_continuar_prompt{
   border: none;
   border-radius: 20px;
-  background-color: #5723d2;
-  background-color: #065fd4;
+  background-color: var(--color-oficial-blue);
   
 
   width: 80%;
